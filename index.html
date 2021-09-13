@@ -8,37 +8,73 @@
   
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="indexStyle.css">
 </head>
 <body>
+  <div class="container">
+    
+    <div class="appBox">
+      
+      <h1>SPLI<br>TTER</h1>
+      
+      <div class="innerAppBox">
+        <div class="desktopSection1">
+          <div class="billSection">
+            <h2>Bill</h2>
+            <input type="text" class="inputBillAmount" placeholder="142.55"></input>
+          </div>
+          
+          <div class="tipAmount">
+            <h2>Select Tip %</h2>
+            
+            <ul>
+            <li>5%</li>
+            <li>10%</li>
+            <li>15%</li>
+            <li>25%</li>
+            <li>50%</li>
+            <li class="customLi"><input type="text" placeholder="Custom"></input></li>
+            </ul>
+          </div>
 
-  Bill
+          <div class="people">
+            <h2>Number of People</h2>
+            <input type="text" class="inputNumberOfPeople" placeholder="5"></input>
+          </div>
+        </div>
+        <div class="desktopSection2">
+          <div class="calculatorWindow">
+            <div class="tipPerPerson">
+              <div class="tipPerPersonText">
+                <p>Tip Amount</p>
+                <p class="darkenedFont">/ person</p>
+              </div>
+              <div class="tipPerPersonAmount">
+                <p>$0.00</p>
+              </div>
+            </div>
+            <div class="totalPerPerson">
+              <div class="totalPerPersonText">
+                <p>Total</p>
+                <p class="darkenedFont">/ person</p>
+              </div>
+              <div class="totalPerPersonAmount">
+                <p>$0.00</p>
+              </div>
+            </div>
+            <div class="resetBox">RESET</div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+</div>
 
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
+
 </html>

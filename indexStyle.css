@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+- Strong cyan: hsl(172, 67%, 45%)
+
+### Neutral
+
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+*{
+    background-color: hsl(185, 41%, 84%);
+    font-family: 'Space Mono', monospace;
+    margin: 0px;
+    font-size: 62.5%;
+}
+
+h1 {
+    text-align: center;
+    color: hsl(186, 14%, 43%);
+    letter-spacing: .8rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.innerAppBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3rem;
+    max-width: 375px;
+    width: 100%;
+    margin: auto;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+
+.desktopSection1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3rem;
+    width: 100%;
+    margin: auto;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+
+.desktopSection2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3rem;
+    width: 100%;
+    margin: auto;
+    border-radius: 3rem;
+    overflow: hidden;
+
+}
+
+h2 {
+    font-size: 1.8rem;
+    background-color: white;
+    color:hsl(186, 14%, 43%);
+}
+
+.billSection {
+    background-color: white;
+    text-align: center;
+}
+
+.billSection > h2 {
+    text-align: left;
+    padding-top: 3rem;
+    padding-left: 10%;
+    padding-bottom: 1rem;
+}
+
+.inputBillAmount {
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 700;
+    width: 74%;
+    border: none;
+    background-image: url(/images/icon-dollar.svg);
+    background-color: hsl(185, 41%, 84%);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 2rem;
+    padding-right: 2rem;
+}
+
+.tipAmount {
+    width: 100%;
+    background-color: white;
+}
+.tipAmount > h2 {
+    text-align: left;
+    padding-top: 2rem;
+    padding-left: 10%;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    padding: 3%;
+    list-style-type: none;
+    font-size: 3.7rem;  
+    font-weight: 700;
+    background-color: white;
+    align-self:center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    background-color: hsl(183, 100%, 15%);
+    padding: 2%;
+    width: 38%;
+    border-radius: .5rem;
+    text-align: center;
+    color: hsl(189, 41%, 97%);
+}
+
+.customLi {
+    background-color: hsl(180, 100%, 75%);
+}
+li > input {
+    background-color: hsl(180, 100%, 75%);
+    color: hsl(186, 14%, 43%);
+    width: 100%;
+    padding: 0%;
+    height: max-content;
+    border:none;
+    border-radius: .5rem;
+    text-align: center;
+    font-size: 2.3rem; 
+    font-weight: 700;
+}
+
+.people {
+    background-color: white;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+.people > h2 {
+    text-align: left;
+    padding-left: 10%;
+    padding-bottom: 1rem;
+}
+.people > input {
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 700;
+    width: 74%;
+    border:none;
+    background-image: url(/images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position:left;
+    background-position-x: 2rem;
+    padding-right: 2rem;
+    background-color: hsl(185, 41%, 84%);
+}
+
+.calculatorWindow {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: hsl(183, 100%, 15%);
+    padding: 2rem;
+    margin: 3.5rem;
+    margin-top: 0;
+    border-radius: 10px;
+    font-size: 2.5rem;
+}
+
+.resetBox {
+    width: 100%;
+    background-color: hsl(172, 67%, 45%);
+    margin-top: 2rem;
+    padding: 3% 0%;
+    font-weight: 700;
+    font-size: 2rem;
+    color: hsl(183, 100%, 15%);
+    border-radius: 5rem;
+}
+
+.tipPerPerson {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(185, 41%, 84%);
+    margin-bottom: 2.5rem;
+}
+
+.tipPerPersonText p {
+    background-color: hsl(183, 100%, 15%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+
+.tipPerPersonText > .darkenedFont {
+    color: hsl(186, 14%, 52%);
+    font-size: 1.3rem;
+}
+
+.tipPerPersonAmount > p {
+    background-color: hsl(183, 100%, 15%);
+    font-size: 2.7rem;
+}
+
+.totalPerPerson {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(185, 41%, 84%);
+    margin-bottom: 1.5rem;
+}
+
+.totalPerPersonText p {
+    background-color: hsl(183, 100%, 15%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+
+.totalPerPersonText > .darkenedFont {
+    color: hsl(186, 14%, 52%);
+    font-size: 1.3rem;
+}
+
+.totalPerPersonAmount > p {
+    background-color: hsl(183, 100%, 15%);
+    font-size: 2.7rem;
+}
+
+@media only screen and (min-width: 1024px) {
+   .innerAppBox {
+       max-width: 1024px;
+       flex-direction: row;
+   }
+
+   li {
+    width: 22.5%;
+    border-radius: .5rem;
+    
+    }
+    .calculatorWindow {
+        justify-content: space-between;
+        margin-top: 0;
+        margin-bottom: 0px;
+        height: 32.5rem;
+    
+    }
+
+    .resetBox {
+        margin-top: 120px;
+    }
+}
