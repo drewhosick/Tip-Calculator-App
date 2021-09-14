@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
-- Strong cyan: hsl(172, 67%, 45%)
+/* - Strong cyan: hsl(172, 67%, 45%)
 
 ### Neutral
 
@@ -10,10 +10,7 @@
 - Light grayish cyan: hsl(185, 41%, 84%)
 - Light grayish cyan: hsl(189, 41%, 97%)
 - White: hsl(0, 0%, 100%)
-
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+*/
 
 *{
     background-color: hsl(185, 41%, 84%);
@@ -130,21 +127,23 @@ ul {
 
 li {
     background-color: hsl(183, 100%, 15%);
-    padding: 2%;
     width: 38%;
     border-radius: .5rem;
     text-align: center;
+    padding: 1rem 0rem;
     color: hsl(189, 41%, 97%);
 }
 
 .customLi {
     background-color: hsl(180, 100%, 75%);
+    width: 38%;
+    padding: 0rem;
 }
-li > input {
+
+.liInput {
     background-color: hsl(180, 100%, 75%);
-    color: hsl(186, 14%, 43%);
     width: 100%;
-    padding: 0%;
+    padding: 1rem 0rem;
     height: max-content;
     border:none;
     border-radius: .5rem;
@@ -197,7 +196,7 @@ li > input {
     font-weight: 700;
     font-size: 2rem;
     color: hsl(183, 100%, 15%);
-    border-radius: 5rem;
+    border-radius: .5rem;
 }
 
 .tipPerPerson {
@@ -224,6 +223,8 @@ li > input {
 
 .tipPerPersonAmount > p {
     background-color: hsl(183, 100%, 15%);
+    color: hsl(172, 67%, 45%);
+    font-weight: 700;
     font-size: 2.7rem;
 }
 
@@ -251,8 +252,18 @@ li > input {
 
 .totalPerPersonAmount > p {
     background-color: hsl(183, 100%, 15%);
+    color: hsl(172, 67%, 45%);
     font-size: 2.7rem;
+    font-weight: 700;
 }
+
+.addSelectorColor {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.attribution { font-size: 2rem; text-align: center; padding-top:3rem; }
+.attribution a { color: hsl(228, 45%, 44%); }
 
 @media only screen and (min-width: 1024px) {
    .innerAppBox {
@@ -261,19 +272,44 @@ li > input {
    }
 
    li {
-    width: 22.5%;
-    border-radius: .5rem;
-    
-    }
+        width: 25%;
+        border-radius: .5rem;
+   }
+
+   .customLi {
+       width: 25%;
+   }
+
+
     .calculatorWindow {
         justify-content: space-between;
-        margin-top: 0;
-        margin-bottom: 0px;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+        padding-bottom: 3.5rem;
         height: 32.5rem;
     
     }
 
-    .resetBox {
-        margin-top: 120px;
+    .totalPerPersonAmount > p {
+        font-size: 4rem;
+    }
+
+    .tipPerPersonAmount > p {
+        font-size: 4rem;
+    }
+
+    .tipPerPerson {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 2rem;
+    }
+
+    .totalPerPerson {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    h1 {
+        margin: 5%;
     }
 }
