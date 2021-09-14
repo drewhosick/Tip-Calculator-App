@@ -141,7 +141,7 @@ li {
 }
 
 .liInput {
-    background-color: hsl(180, 100%, 75%);
+    /* background-color: hsl(180, 100%, 75%); */
     width: 100%;
     padding: 1rem 0rem;
     height: max-content;
