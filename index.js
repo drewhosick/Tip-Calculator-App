@@ -1,5 +1,5 @@
 const tipSize = document.querySelectorAll("li");
-const customTip = document.querySelector(".customLi");
+const customTip = document.querySelector(".liInput");
 const billAmount = document.querySelector(".inputBillAmount");
 const numberOfPeople = document.querySelector(".inputNumberOfPeople");
 const tipAmountPerPerson = document.querySelector(".tipPerPersonAmountText");
@@ -13,7 +13,10 @@ tipSize.forEach(tip => {
     tip.addEventListener('click', e => {
         for (let i = 0; i < tipSize.length; i++) {
             tipSize[i].classList.remove("addSelectorColor");
+            customTip.classList.remove("addSelectorColor");
+
         }
+        customTip.classList.remove("addSelectorColor");
         e.target.classList.add("addSelectorColor");
         
 
