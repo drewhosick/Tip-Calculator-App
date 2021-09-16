@@ -28,6 +28,7 @@ tipSize.forEach(tip => {
         customTip.classList.remove("addSelectorColor");
         e.target.classList.add("addSelectorColor");
         tipChoice = 0;
+        resetButton.classList.add('resetBoxActive');
 
         switch(e.target.id) {
             case "5":
@@ -50,20 +51,19 @@ tipSize.forEach(tip => {
                 break;
         }
 
-        if(tipChoice != 0) {
+        if(tipChoice !== 0 && billAmount.value.length != 0 && numberOfPeople.value.length != 0 ) {
+            customTip.value = null;
             calculateAll();
         }
-        
-
     });
 });
 
 resetButton.addEventListener('click', () => {
     billAmount.value = null;
     numberOfPeople.value = null;
-    customTip.value = "Custom";
-    tipAmountPerPerson.value = "$0.00";
-    totalAmountPerPerson.value = "$0.00";
+    customTip.value = null;
+    tipAmountPerPerson.innerText = "$0.00";
+    totalAmountPerPerson.innerText = "$0.00";
     tipChoice = 0;
     for (let i = 0; i < tipSize.length; i++) {
         customTip.classList.remove("addSelectorColor");
@@ -73,7 +73,24 @@ resetButton.addEventListener('click', () => {
 });
 
 billAmount.addEventListener('input', () => {
-    if(tipChoice != 0 && numberOfPeople.value != null || tipChoice == 0 && customTip.value != "Custom" && numberOfPeople.value != null) {
+    resetButton.classList.add('resetBoxActive');
+    if( tipChoice != 0 && numberOfPeople.value.length != 0 ) {
+        calculateAll();
+    }
+});
+
+numberOfPeople.addEventListener('input', () => {
+    resetButton.classList.add('resetBoxActive');
+    if( tipChoice != 0 && billAmount.value.length != 0 ) {
+        calculateAll();
+    }
+});
+
+customTip.addEventListener('input', () => {
+    resetButton.classList.add('resetBoxActive');
+    if( billAmount.value.length != 0 && numberOfPeople.value.length != 0 ) {
+        tipChoice = Number(customTip.value / 100);
+        console.log(tipChoice);
         calculateAll();
     }
 });
