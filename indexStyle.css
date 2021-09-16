@@ -141,7 +141,6 @@ li {
 }
 
 .liInput {
-    /* background-color: hsl(180, 100%, 75%); */
     width: 100%;
     padding: 1rem 0rem;
     height: max-content;
@@ -190,13 +189,18 @@ li {
 
 .resetBox {
     width: 100%;
-    background-color: hsl(172, 67%, 45%);
+    background-color: hsl(186, 14%, 43%);
     margin-top: 2rem;
     padding: 3% 0%;
     font-weight: 700;
     font-size: 2rem;
     color: hsl(183, 100%, 15%);
     border-radius: .5rem;
+}
+
+.resetBoxActive {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
 }
 
 .tipPerPerson {

@@ -5,12 +5,18 @@ const numberOfPeople = document.querySelector(".inputNumberOfPeople");
 const tipAmountPerPerson = document.querySelector(".tipPerPersonAmountText");
 const totalAmountPerPerson = document.querySelector(".totalPerPersonAmountText");
 const resetButton = document.querySelector(".resetBox");
-let tipChoice = 15;
+let tipChoice = 0;
 
 function roundToTwo(num) {
     return +(Math.round(num + "e+2")  + "e-2");
 }
 
+const calculateAll = () => {
+    let tipCalc = Number(billAmount.value) * tipChoice / Number(numberOfPeople.value);
+    let totalCalc = (Number(billAmount.value) + (Number(billAmount.value) * tipChoice)) / Number(numberOfPeople.value);
+    tipAmountPerPerson.innerText = "$" + roundToTwo(tipCalc).toFixed(2);
+    totalAmountPerPerson.innerText = "$" + roundToTwo(totalCalc).toFixed(2);
+};
 
 tipSize.forEach(tip => {
     tip.addEventListener('click', e => {
@@ -40,15 +46,12 @@ tipSize.forEach(tip => {
                 tipChoice = 0.50;
                 break;
             default:
-                // wait for custom to be entered and then enter key to be hit
+                // This is so custom can be used by user.  Seperate call for custom update.
                 break;
         }
 
         if(tipChoice != 0) {
-            let tipCalc = Number(billAmount.value) * tipChoice / Number(numberOfPeople.value);
-            let totalCalc = (Number(billAmount.value) + (Number(billAmount.value) * tipChoice)) / Number(numberOfPeople.value);
-            tipAmountPerPerson.innerText = "$" + roundToTwo(tipCalc).toFixed(2);
-            totalAmountPerPerson.innerText = "$" + roundToTwo(totalCalc).toFixed(2);
+            calculateAll();
         }
         
 
@@ -56,14 +59,21 @@ tipSize.forEach(tip => {
 });
 
 resetButton.addEventListener('click', () => {
-    billAmount.value = "142.55";
-    numberOfPeople.value = "5";
+    billAmount.value = null;
+    numberOfPeople.value = null;
     customTip.value = "Custom";
-    tipAmountPerPerson.value = "$4.28";
-    totalAmountPerPerson.value = "$32.79";
+    tipAmountPerPerson.value = "$0.00";
+    totalAmountPerPerson.value = "$0.00";
+    tipChoice = 0;
     for (let i = 0; i < tipSize.length; i++) {
         customTip.classList.remove("addSelectorColor");
         tipSize[i].classList.remove("addSelectorColor");
-        tipSize[2].classList.add("addSelectorColor"); // reset to 15% highlighted
+    }
+    resetButton.classList.remove('resetBoxActive');
+});
+
+billAmount.addEventListener('input', () => {
+    if(tipChoice != 0 && numberOfPeople.value != null || tipChoice == 0 && customTip.value != "Custom" && numberOfPeople.value != null) {
+        calculateAll();
     }
 });
