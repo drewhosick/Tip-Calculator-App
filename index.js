@@ -5,7 +5,10 @@ const numberOfPeople = document.querySelector(".inputNumberOfPeople");
 const tipAmountPerPerson = document.querySelector(".tipPerPersonAmountText");
 const totalAmountPerPerson = document.querySelector(".totalPerPersonAmountText");
 const resetButton = document.querySelector(".resetBox");
+const errorPeople = document.querySelector(".errorPeople");
 let tipChoice = 0;
+const regBTest = new RegExp("^[0-9\.]+$");
+const regPTest = new RegExp("^[0-9]+$");
 
 function roundToTwo(num) {
     return +(Math.round(num + "e+2")  + "e-2");
@@ -75,14 +78,25 @@ resetButton.addEventListener('click', () => {
 billAmount.addEventListener('input', () => {
     resetButton.classList.add('resetBoxActive');
     if( tipChoice != 0 && numberOfPeople.value.length != 0 ) {
-        calculateAll();
+        if( regBTest.test(billAmount.value)) {
+            calculateAll();
+        } else {
+
+        }    
     }
 });
 
 numberOfPeople.addEventListener('input', () => {
     resetButton.classList.add('resetBoxActive');
     if( tipChoice != 0 && billAmount.value.length != 0 ) {
-        calculateAll();
+        if(regPTest.test(numberOfPeople.value)) {
+            errorPeople.classList.remove("errorPeopleOn");
+            errorPeople.classList.add("errorPeople");
+            calculateAll();
+        } else {
+            errorPeople.classList.add("errorPeopleOn");
+            errorPeople.classList.remove("errorPeople");
+        }
     }
 });
 

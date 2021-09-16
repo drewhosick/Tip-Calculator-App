@@ -68,7 +68,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     background-color: white;
     color:hsl(186, 14%, 43%);
 }
@@ -156,11 +156,30 @@ li {
     text-align: center;
     padding-bottom: 3rem;
 }
-.people > h2 {
-    text-align: left;
+
+.peopleSplitter {
+    display: flex;
+    background-color:white;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+.numberofPeopleTitle {
+    text-align: center;
     padding-left: 10%;
     padding-bottom: 1rem;
 }
+
+.errorPeople {
+    padding-right: .5rem;
+    color: hsl(172, 67%, 45%);
+    display: none;
+}
+
+.errorPeopleOn {
+    display: inline;
+}
+
 .people > input {
     text-align: right;
     font-size: 2.5rem;
