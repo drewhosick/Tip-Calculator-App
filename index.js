@@ -1,3 +1,4 @@
+// Getting all the constants declared and nodes connected.
 const tipSize = document.querySelectorAll("li");
 const customTip = document.querySelector(".liInput");
 const billAmount = document.querySelector(".inputBillAmount");
@@ -6,16 +7,23 @@ const tipAmountPerPerson = document.querySelector(".tipPerPersonAmountText");
 const totalAmountPerPerson = document.querySelector(".totalPerPersonAmountText");
 const resetButton = document.querySelector(".resetBox");
 const errorPeople = document.querySelector(".errorPeople");
-let tipChoice = 0;
 const regBTest = new RegExp("^[0-9\.]+$");
 const regPTest = new RegExp("^[0-9]+$");
 
 
+// This is used to set the tip percentage for calculations
+// as well as the number for the custom tip.
+let tipChoice = 0; 
 
+// Rounding to two decimal places for dollar amounts
 function roundToTwo(num) {
     return +(Math.round(num + "e+2")  + "e-2");
 }
 
+// Most important function in project.  Used to make the
+// final calculations for the tip amount per person and total
+// amount per person.  Then it adds it to the text of both displayed
+// to the user.
 const calculateAll = () => {
     let tipCalc = Number(billAmount.value) * tipChoice / Number(numberOfPeople.value);
     let totalCalc = (Number(billAmount.value) + (Number(billAmount.value) * tipChoice)) / Number(numberOfPeople.value);
@@ -23,6 +31,8 @@ const calculateAll = () => {
     totalAmountPerPerson.innerText = "$" + roundToTwo(totalCalc).toFixed(2);
 };
 
+// Checking for the tip percentage and doing all
+// the grunt work for that.
 tipSize.forEach(tip => {
     tip.addEventListener('click', e => {
         for (let i = 0; i < tipSize.length; i++) {
@@ -63,6 +73,8 @@ tipSize.forEach(tip => {
     });
 });
 
+
+// resets the project back to start for user
 resetButton.addEventListener('click', () => {
     billAmount.value = null;
     numberOfPeople.value = null;
@@ -78,6 +90,7 @@ resetButton.addEventListener('click', () => {
     resetButton.classList.remove('resetBoxActive');
 });
 
+// input reader for bill amount
 billAmount.addEventListener('input', () => {
     resetButton.classList.add('resetBoxActive');
     if( tipChoice != 0 && numberOfPeople.value.length != 0 ) {
@@ -89,6 +102,7 @@ billAmount.addEventListener('input', () => {
     }
 });
 
+// input reader for number of people
 numberOfPeople.addEventListener('input', () => {
     resetButton.classList.add('resetBoxActive');
     
@@ -102,6 +116,7 @@ numberOfPeople.addEventListener('input', () => {
     }
 });
 
+// input reader for custom tip amount
 customTip.addEventListener('input', () => {
     resetButton.classList.add('resetBoxActive');
     customTip.style.textAlign = "right";
