@@ -90,6 +90,7 @@ billAmount.addEventListener('input', () => {
 
 numberOfPeople.addEventListener('input', () => {
     resetButton.classList.add('resetBoxActive');
+    
     if( tipChoice != 0 && billAmount.value.length != 0 ) {
         if(regPTest.test(numberOfPeople.value) == true) {
             console.log("This is True");
