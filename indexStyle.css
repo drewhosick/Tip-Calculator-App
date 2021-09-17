@@ -90,13 +90,19 @@ h2 {
     font-size: 2.5rem;
     font-weight: 700;
     width: 74%;
-    border: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
     background-image: url(/images/icon-dollar.svg);
     background-color: hsl(185, 41%, 84%);
     background-repeat: no-repeat;
     background-position: left;
     background-position-x: 2rem;
     padding-right: 2rem;
+}
+
+.inputBillAmount:hover {
+    background-color: hsl(189, 41%, 97%);
+    border: 2px solid hsl(172, 67%, 45%);
 }
 
 .tipAmount {
@@ -129,9 +135,15 @@ li {
     background-color: hsl(183, 100%, 15%);
     width: 38%;
     border-radius: .5rem;
+    border: 2px solid rgba(0,0,0,0);
     text-align: center;
-    padding: 1rem 0rem;
+    padding: .5rem 0rem;
     color: hsl(189, 41%, 97%);
+}
+
+li:hover {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
 }
 
 .customLi {
@@ -142,13 +154,25 @@ li {
 
 .liInput {
     width: 100%;
-    padding: 1rem 0rem;
+    padding: .5rem 0rem;
     height: max-content;
-    border:none;
+    border: 2px solid hsl(172, 67%, 45%);
     border-radius: .5rem;
     text-align: center;
     font-size: 2.3rem; 
     font-weight: 700;
+}
+
+.liInput:hover {
+    background-color: hsl(189, 41%, 97%);
+}
+
+.liInput:focus {
+    text-align: right;
+}
+
+.liInput:focus::placeholder {
+    color:transparent;
 }
 
 .people {
@@ -166,18 +190,14 @@ li {
 }
 .numberofPeopleTitle {
     text-align: center;
-    padding-left: 10%;
+    padding-left: 0%;
     padding-bottom: 1rem;
 }
 
 .errorPeople {
     padding-right: .5rem;
     color: hsl(172, 67%, 45%);
-    display: none;
-}
-
-.errorPeopleOn {
-    display: inline;
+    visibility: hidden;
 }
 
 .people > input {
@@ -185,13 +205,19 @@ li {
     font-size: 2.5rem;
     font-weight: 700;
     width: 74%;
-    border:none;
+    border: 2px solid transparent;
+    border-radius: 5px;
     background-image: url(/images/icon-person.svg);
     background-repeat: no-repeat;
     background-position:left;
     background-position-x: 2rem;
     padding-right: 2rem;
     background-color: hsl(185, 41%, 84%);
+}
+
+.people > input:hover {
+    background-color: hsl(189, 41%, 97%);
+    border: 2px solid hsl(172, 67%, 45%);
 }
 
 .calculatorWindow {
@@ -215,6 +241,10 @@ li {
     font-size: 2rem;
     color: hsl(183, 100%, 15%);
     border-radius: .5rem;
+}
+
+.resetBox:hover {
+    background-color: hsl(189, 41%, 97%);
 }
 
 .resetBoxActive {

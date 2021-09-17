@@ -10,6 +10,8 @@ let tipChoice = 0;
 const regBTest = new RegExp("^[0-9\.]+$");
 const regPTest = new RegExp("^[0-9]+$");
 
+
+
 function roundToTwo(num) {
     return +(Math.round(num + "e+2")  + "e-2");
 }
@@ -89,13 +91,13 @@ billAmount.addEventListener('input', () => {
 numberOfPeople.addEventListener('input', () => {
     resetButton.classList.add('resetBoxActive');
     if( tipChoice != 0 && billAmount.value.length != 0 ) {
-        if(regPTest.test(numberOfPeople.value)) {
-            errorPeople.classList.remove("errorPeopleOn");
-            errorPeople.classList.add("errorPeople");
+        if(regPTest.test(numberOfPeople.value) == true) {
+            console.log("This is True");
+            errorPeople.style.visibility = "hidden";
             calculateAll();
         } else {
-            errorPeople.classList.add("errorPeopleOn");
-            errorPeople.classList.remove("errorPeople");
+            console.log("This is False");
+            errorPeople.style.visibility = "visible";
         }
     }
 });
