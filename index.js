@@ -82,6 +82,7 @@ resetButton.addEventListener('click', () => {
     tipAmountPerPerson.innerText = "$0.00";
     totalAmountPerPerson.innerText = "$0.00";
     tipChoice = 0;
+    errorPeople.style.visibility = "hidden";
     customTip.style.textAlign = "center";
     for (let i = 0; i < tipSize.length; i++) {
         customTip.classList.remove("addSelectorColor");
@@ -106,12 +107,16 @@ billAmount.addEventListener('input', () => {
 numberOfPeople.addEventListener('input', () => {
     resetButton.classList.add('resetBoxActive');
     
+    if(regPTest.test(numberOfPeople.value) == true) {
+        errorPeople.style.visibility = "hidden";
+    
+    } else {
+        errorPeople.style.visibility = "visible";
+    }
+
     if( tipChoice != 0 && billAmount.value.length != 0 ) {
         if(regPTest.test(numberOfPeople.value) == true) {
-                errorPeople.style.visibility = "hidden";
             calculateAll();
-        } else {
-                errorPeople.style.visibility = "visible";
         }
     }
 });
